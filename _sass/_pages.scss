@@ -1,0 +1,167 @@
+// ---------- Home hero: the stage ----------
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: $navy-900;
+  color: $navy-ink;
+  padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5.5rem);
+
+  // Two soft "stage lights": pink from upper left, blue from lower right.
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  &::before { width: 60vw; height: 60vw; max-width: 720px; max-height: 720px; left: -18vw; top: -28vw; background: radial-gradient(closest-side, rgba($pink, 0.55), rgba($pink, 0)); }
+  &::after  { width: 60vw; height: 60vw; max-width: 760px; max-height: 760px; right: -20vw; bottom: -34vw; background: radial-gradient(closest-side, rgba($blue, 0.6), rgba($blue, 0)); }
+
+  .container { position: relative; display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 3rem; align-items: center; }
+  h1 { color: $white; margin-bottom: 0.6rem; font-weight: 800; }
+  h1 em { font-style: italic; color: $pink-soft; }
+  .lead { color: $navy-muted; font-size: 1.2rem; max-width: 34em; }
+  .hero-meta { color: $navy-muted; font-size: 0.95rem; margin-top: 1.4rem; }
+  .btn-outline { color: $white; }
+}
+@media (max-width: $bp-md) {
+  .hero .container { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+// "Coming up" glass card in the hero
+.coming-up {
+  background: rgba($white, 0.06);
+  border: 1px solid rgba($white, 0.16);
+  border-radius: $radius;
+  padding: 1.4rem 1.5rem;
+  backdrop-filter: blur(6px);
+  h3 { font-size: 1.05rem; color: $white; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.75rem; padding: 0.5rem 0; border-top: 1px solid rgba($white, 0.1); }
+  li:first-child { border-top: 0; }
+  .date { color: $pink-soft; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.02em; }
+  .more { margin-top: 0.9rem; font-size: 0.92rem; }
+}
+
+// Find a class by age
+.age-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+@media (max-width: $bp-lg) { .age-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .age-grid { grid-template-columns: 1fr 1fr; } }
+.age-card {
+  display: block;
+  text-decoration: none;
+  color: $ink;
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: 1.2rem 1.1rem;
+  box-shadow: $shadow-soft;
+  transition: transform 0.08s ease, border-color 0.15s ease;
+  &:hover { transform: translateY(-2px); border-color: $pink; }
+  .age-range { font-family: $font-display; font-size: 1.4rem; font-weight: 700; color: $blue-deep; line-height: 1.1; }
+  .age-label { font-weight: 700; margin: 0.25rem 0 0.5rem; }
+  small { display: block; color: $ink-muted; font-size: 0.85rem; line-height: 1.4; }
+}
+
+// Gallery ("What's happening")
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: $bp-lg) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .gallery { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; } }
+.gallery figure {
+  margin: 0;
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  box-shadow: $shadow-soft;
+  img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  figcaption { padding: 0.6rem 0.75rem 0.7rem; font-size: 0.85rem; color: $ink-muted; line-height: 1.4; }
+}
+.gallery figure.tall img { aspect-ratio: 4 / 5; object-fit: contain; background: $cream-2; }
+
+// Photo strip (Troupe page)
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+@media (max-width: $bp-md) { .photo-grid { grid-template-columns: 1fr 1fr; } }
+.photo-grid figure { margin: 0; border-radius: $radius-sm; overflow: hidden; box-shadow: $shadow-soft; background: $navy-900; }
+.photo-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.photo-grid figure.wide { grid-column: span 2; img { aspect-ratio: 16 / 10; } }
+
+// ---------- Inner pages ----------
+.page-band {
+  background: $navy-900;
+  color: $navy-ink;
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+  position: relative;
+  overflow: hidden;
+  &::after { content: ""; position: absolute; right: -10vw; top: -20vw; width: 40vw; height: 40vw; max-width: 520px; max-height: 520px; border-radius: 50%; filter: blur(60px); background: radial-gradient(closest-side, rgba($pink, 0.35), rgba($pink, 0)); pointer-events: none; }
+  .container { position: relative; }
+  h1 { color: $white; margin-bottom: 0.3rem; }
+  .lead { color: $navy-muted; margin: 0; max-width: 44em; }
+  .eyebrow a { color: $pink-soft; }
+}
+.page-band--tight { padding: 1.6rem 0; }
+
+.page-body { padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.page-body .container { max-width: 860px; }
+.page-body--wide .container { max-width: $maxw; }
+.page-body h2 { margin-top: 2rem; padding-bottom: 0.3rem; border-bottom: 2px solid $cream-2; }
+.page-body h2:first-child { margin-top: 0; }
+.page-body .prose { max-width: 62ch; }
+
+// Classes
+.week { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0 2rem; }
+@media (max-width: $bp-lg) { .week { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .week { grid-template-columns: 1fr; } }
+.day {
+  background: $white; border: 1px solid $line; border-radius: $radius; padding: 1rem 1.1rem; box-shadow: $shadow-soft;
+  h3 { font-family: $font-body; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: $pink; margin-bottom: 0.6rem; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { display: grid; grid-template-columns: 7.4rem 1fr; gap: 0.6rem; padding: 0.4rem 0; border-top: 1px dashed $line; font-size: 0.93rem; }
+  li:first-child { border-top: 0; }
+  .time { color: $ink-muted; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .what a { color: $ink; font-weight: 700; text-decoration: none; &:hover { color: $blue; } }
+  .who { display: block; color: $ink-muted; font-size: 0.82rem; }
+}
+.program { padding: 1.5rem 0; border-top: 1px solid $line; scroll-margin-top: 110px; }
+.program:first-of-type { border-top: 0; }
+.program-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1rem; margin-bottom: 0.5rem; h3 { margin: 0; font-size: 1.5rem; } }
+.program-meta { color: $ink-muted; font-size: 0.95rem; }
+.slots { list-style: none; padding: 0; margin: 0.75rem 0 0; display: grid; gap: 0.4rem; }
+.slots li { display: grid; grid-template-columns: 9rem 1fr; gap: 0.75rem; background: $white; border: 1px solid $line; border-radius: $radius-sm; padding: 0.55rem 0.85rem; font-size: 0.95rem; }
+.slots .when { font-weight: 700; color: $blue-deep; }
+.slots .who { color: $ink-muted; }
+@media (max-width: 560px) { .slots li { grid-template-columns: 1fr; gap: 0.1rem; } }
+
+// Tuition
+.price-table td:nth-child(2) { font-weight: 700; color: $blue-deep; white-space: nowrap; }
+.price-big { font-family: $font-display; font-size: 1.6rem; color: $blue-deep; }
+
+// Staff
+.staff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: $bp-lg) { .staff-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .staff-grid { grid-template-columns: 1fr; } }
+.staff-card {
+  display: block; text-decoration: none; color: $ink;
+  background: $white; border: 1px solid $line; border-radius: $radius; overflow: hidden; box-shadow: $shadow-soft;
+  transition: transform 0.08s ease, border-color 0.15s ease;
+  &:hover { transform: translateY(-2px); border-color: $pink; }
+  img { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center top; }
+  .staff-name { padding: 0.9rem 1rem 0.2rem; font-family: $font-display; font-weight: 700; font-size: 1.15rem; }
+  .staff-role { padding: 0 1rem 1rem; color: $ink-muted; font-size: 0.9rem; }
+}
+.bio { display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem; align-items: start; }
+@media (max-width: $bp-md) { .bio { grid-template-columns: 1fr; } .bio-photo { max-width: 260px; } }
+.bio-photo { margin: 0; img { border-radius: $radius; box-shadow: $shadow; aspect-ratio: 1; object-fit: cover; object-position: center top; } }
+.bio-text p:first-child { font-size: 1.05rem; }
+.bio-back { margin-top: 1.5rem; }
+
+// Contact
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+@media (max-width: $bp-md) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-list { list-style: none; padding: 0; margin: 0 0 1.5rem; li { display: flex; gap: 0.7rem; align-items: flex-start; padding: 0.5rem 0; .icon { color: $pink; margin-top: 0.3rem; flex: none; } } }
+.social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; a { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 0.9rem; border: 1px solid $line; border-radius: 999px; background: $white; text-decoration: none; color: $ink; font-weight: 600; font-size: 0.9rem; &:hover { border-color: $blue; color: $blue; } .icon { width: 1.05em; height: 1.05em; } } }
+
+// Partner / parties cards on the home page
+.feature { display: grid; grid-template-columns: 180px 1fr; gap: 1.4rem; align-items: center; }
+.feature img { border-radius: $radius-sm; }
+@media (max-width: 560px) { .feature { grid-template-columns: 1fr; } }

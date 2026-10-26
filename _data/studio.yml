@@ -1,0 +1,65 @@
+# The studio's own details. Everything here shows in the header, footer and
+# Contact page, so change it once and it changes everywhere.
+name: Unique Performance Arts Center
+established: 1998
+
+# The old site showed this address but its "email us" links pointed at
+# uniqueperformancearts@gmail.com (no "center"). This one is the address that
+# appears on the studio's social posts and Zelle, so it is used everywhere.
+email: uniqueperformanceartscenter@gmail.com
+phone: 973-669-1791
+phone_tel: "+19736691791"
+
+address:
+  street: 474 Prospect Avenue, 2nd floor
+  city: West Orange
+  state: NJ
+  zip: "07052"
+  directions: In back of Ascendia Bank (formerly Glen Rock Savings Bank), across from Essex Green.
+  map_url: https://goo.gl/maps/iyyozSPc95G2
+  # Keyless Google Maps embed; no API key, no account needed.
+  map_embed: https://www.google.com/maps?q=474+Prospect+Avenue,+West+Orange,+NJ+07052&output=embed
+
+office_hours:
+  - days: Monday – Friday
+    hours: 4:30 – 8:30 pm
+  - days: Saturday
+    hours: 9:00 am – 1:30 pm
+  - days: Sunday
+    hours: Closed
+
+social:
+  - name: Facebook
+    url: https://www.facebook.com/upacwestorange
+    icon: facebook
+  - name: Instagram
+    url: https://www.instagram.com/uniqueperformanceartscenter/
+    icon: instagram
+  - name: YouTube
+    url: https://www.youtube.com/user/upacwo
+    icon: youtube
+  # Carried over from the old site; the studio should confirm it is still in use.
+  - name: X (Twitter)
+    url: https://twitter.com/uniquepac
+    icon: x
+
+# Shared Google Calendar shown on the Calendar page.
+calendar:
+  id: uuqca5917caj4e2m4liqoud9q8@group.calendar.google.com
+  embed: https://calendar.google.com/calendar/embed?showNav=1&showPrint=0&showTabs=1&showTz=0&wkst=1&bgcolor=%23FFFFFF&src=uuqca5917caj4e2m4liqoud9q8%40group.calendar.google.com&color=%23182C57&ctz=America%2FNew_York
+  link: https://calendar.google.com/calendar/embed?src=uuqca5917caj4e2m4liqoud9q8@group.calendar.google.com
+
+# Birthday parties, from the studio's social post.
+parties:
+  ages: 3 – 10 years
+  blurb: You pick the theme! Email us for details and to reserve your date.
+
+# Partner program that runs out of the studio.
+partner:
+  name: West Essex Music Together
+  tagline: Bringing music to families in western Essex County for over 20 years
+  director: Anne Sailer (she/her)
+  url: http://www.westessexmusictogether.com/
+  url_text: westessexmusictogether.com
+  phone: 973-498-8830
+  image: /assets/img/gallery/music-together.jpg

@@ -1,13 +1,52 @@
-# Replace "Your Name" below — angle-bracket placeholders would vanish in
-# rendered HTML (browsers treat them as unknown tags), so this ships as a
-# visible, silly-proof default until you personalize it.
-title: Your Name's page
-description: Built with the GDD GitHub Pages template
-theme: jekyll-theme-cayman
+title: Unique Performance Arts Center
+short_title: UPAC
+tagline: Dedicated to excellence in the performing arts
+description: >-
+  Unique Performance Arts Center (UPAC) — dance and musical theater classes for
+  ages 18 months through adult in West Orange, NJ. Ballet, tap, jazz, hip hop,
+  creative movement and the award-winning UPAC Troupe. Established 1998.
 
-# A few other GitHub-supported themes you can swap to later by
-# editing the `theme:` line above:
-#   jekyll-theme-minimal, jekyll-theme-slate, jekyll-theme-architect,
-#   jekyll-theme-merlot, jekyll-theme-modernist, jekyll-theme-leap-day
-# For richer theming, ask your agent to walk you through forking a
-# theme repo or moving to a different SSG.
+# Served as a project page until the owner points uniquepac.com here. Every
+# internal link and asset path goes through `relative_url`, so moving to the
+# custom domain is this one line back to "" plus a CNAME file (see README).
+url: "https://siliconsaga.github.io"
+baseurl: /upac-site
+
+# Base for the "Suggest an edit" link in the footer: the page's source path is
+# appended and lands in GitHub's editor for that file. Update if the repo moves.
+github_edit_base: "https://github.com/SiliconSaga/upac-site/edit/main/"
+
+permalink: pretty
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Staff bios: one file per instructor under _staff/, each rendered at
+# /staff/<name>/. The Staff page lists them in `order:` order.
+collections:
+  staff:
+    output: true
+    permalink: /staff/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: staff
+    values:
+      layout: staff
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - AGENTS.md
+  - LICENSE
+  - vendor
+  - node_modules
+  - _docs

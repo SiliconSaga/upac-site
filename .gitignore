@@ -3,10 +3,14 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
-# Bundler artifacts (only present if you decide to run Jekyll locally)
+# Bundler artifacts (Gemfile.lock IS tracked: CI builds from it)
 .bundle/
 vendor/
-Gemfile.lock
+
+# Visual-diff local scratch, if the volundr tooling is ever run by hand here
+_site_*/
+_diff/
+_diff_out/
 
 # OS noise
 .DS_Store

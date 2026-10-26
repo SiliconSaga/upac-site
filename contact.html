@@ -1,0 +1,35 @@
+---
+title: Contact Us
+lead: Stop by the studio office, call, or email. We'd love to hear from you.
+description: Contact Unique Performance Arts Center — address, office hours, phone, email and directions in West Orange, NJ.
+wide: true
+edit_path: _data/studio.yml
+---
+{%- assign studio = site.data.studio -%}
+<div class="contact-grid">
+  <div>
+    <h2 style="margin-top:0">Reach us</h2>
+    <ul class="contact-list">
+      <li>{% include icon.html name="mail" %}<span><a href="mailto:{{ studio.email }}">{{ studio.email }}</a></span></li>
+      <li>{% include icon.html name="phone" %}<span><a href="tel:{{ studio.phone_tel }}">{{ studio.phone }}</a></span></li>
+      <li>{% include icon.html name="pin" %}<span><strong>{{ studio.name }}</strong><br><a href="{{ studio.address.map_url }}" target="_blank" rel="noopener">{{ studio.address.street }}<br>{{ studio.address.city }}, {{ studio.address.state }} {{ studio.address.zip }}</a><br><em>{{ studio.address.directions }}</em></span></li>
+    </ul>
+
+    <h2>Studio office hours</h2>
+    <ul class="rows">
+      {% for h in studio.office_hours %}<li><span>{{ h.days }}</span><span>{{ h.hours }}</span></li>{% endfor %}
+    </ul>
+
+    <h2>Follow us</h2>
+    <div class="social-row">
+      {% for s in studio.social %}<a href="{{ s.url }}" target="_blank" rel="noopener">{% include icon.html name=s.icon %} {{ s.name }}</a>{% endfor %}
+    </div>
+  </div>
+
+  <div>
+    <div class="embed embed--map">
+      <iframe src="{{ studio.address.map_embed }}" title="Map to {{ studio.name }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="muted" style="font-size:.9rem;margin-top:.6rem"><a href="{{ studio.address.map_url }}" target="_blank" rel="noopener">Open in Google Maps &rarr;</a></p>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+---
+title: UPAC Troupe
+eyebrow: 2025–2026
+lead: Our award-winning competitive team, ages seven to eighteen.
+description: The UPAC Troupe — a select competitive dance team that trains with master teachers, competes regionally and nationally, and performs at community events.
+wide: true
+---
+<p class="prose" style="font-size:1.1rem">Our award-winning Troupe is a select group of dancers chosen for their exceptional technique, performance quality and unwavering dedication. These dancers go above and beyond, dedicating countless hours in the studio to perfecting both choreography and technique, in addition to their regular classes. As ambassadors of our studio, Troupe members participate in workshops with renowned master teachers from across the country, compete in prestigious regional and national competitions, and also take part in community events. UPAC Troupe dancers have consistently earned high-score awards at both the regional and national levels, as well as numerous special recognition honors.</p>
+
+<div class="photo-grid">
+  {% for p in site.data.gallery.troupe %}
+  <figure{% if p.wide %} class="wide"{% endif %}>
+    <img src="{{ '/assets/img/troupe/' | append: p.file | relative_url }}" alt="{{ p.alt | default: p.caption }}" loading="lazy">
+  </figure>
+  {% endfor %}
+</div>
+
+<div class="callout">
+  <p><strong>Interested in Troupe?</strong> Membership is by selection. Ask at the front desk or <a href="mailto:{{ site.data.studio.email }}?subject=UPAC%20Troupe">email the studio</a>.</p>
+</div>

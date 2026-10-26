@@ -1,0 +1,59 @@
+# 2026–2027 season tuition. Prices are shown exactly as written here, so keep
+# the dollar sign and cents.
+season: 2026–2027 Season
+months: September – June
+
+cycles_intro: Our season tuition is divided into three cycle payments. Each cycle is 13 weeks.
+cycles:
+  - name: Cycle 1
+    months: September – December
+    due: Tuition due at registration
+  - name: Cycle 2
+    months: December – March
+    due: Tuition due the first week of December
+  - name: Cycle 3
+    months: March – June
+    due: Tuition due the first week of March
+
+registration_fee: $35.00 per family
+autopay: An automatic monthly debit payment plan is available.
+
+per_cycle_title: Tuition cost per cycle
+per_cycle:
+  - length: 45-minute class
+    price: $201.50
+    classes: Creative Movement
+  - length: 1-hour class
+    price: $227.50
+    classes: Preschool, Combo I, Combo II, Tap, Ballet, Jazz, Hip Hop
+  - length: 1½-hour class
+    price: $266.50
+    classes: Ballet & Jazz
+
+offers_title: Special offers
+offers:
+  - 4 classes — 10% off
+  - 5 classes — 15% off
+  - 6th class free (lowest-priced class)
+offers_note: Session-priced classes below are not included in the special offers.
+
+sessions_title: Session-priced classes
+sessions:
+  - name: You & Me
+    weeks: 10-week session
+    price: $155.00
+  - name: Musical Theater
+    weeks: 8-week session
+    price: $160.00
+  - name: Adult Tap
+    weeks: 8-week session
+    price: $140.00
+
+payment:
+  accepted: Visa, Mastercard, American Express, Discover, checks, cash and Zelle
+  zelle: uniqueperformanceartscenter@gmail.com
+  card_minimum: $20.00 minimum credit card charge
+
+policies:
+  - Tuition is non-refundable.
+  - Make-up classes are available for absentees.

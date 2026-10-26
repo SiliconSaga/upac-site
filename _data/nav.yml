@@ -1,0 +1,18 @@
+# Top navigation, in order. The Register button is separate (see
+# _data/season.yml) so it stays visually distinct from the menu.
+- title: Home
+  url: /
+- title: About
+  url: /about/
+- title: Classes
+  url: /classes/
+- title: Tuition
+  url: /tuition/
+- title: Calendar
+  url: /calendar/
+- title: Troupe
+  url: /troupe/
+- title: Staff
+  url: /staff/
+- title: Contact
+  url: /contact/

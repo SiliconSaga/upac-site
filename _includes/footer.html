@@ -1,0 +1,46 @@
+{%- assign studio = site.data.studio -%}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <img class="footer-logo" src="{{ '/assets/img/logo.png' | relative_url }}" alt="" width="200" height="79">
+        <p class="footer-tagline">{{ site.tagline }}.</p>
+        <p>Serving West Orange families since {{ studio.established }}.</p>
+        <ul class="social">
+          {% for s in studio.social %}
+          <li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ studio.name }} on {{ s.name }}">{% include icon.html name=s.icon %}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <address>
+          <a href="{{ studio.address.map_url }}" target="_blank" rel="noopener">{{ studio.address.street }}<br>{{ studio.address.city }}, {{ studio.address.state }} {{ studio.address.zip }}</a>
+        </address>
+        <p class="footer-small">{{ studio.address.directions }}</p>
+      </div>
+      <div>
+        <h4>Office hours</h4>
+        <ul class="hours">
+          {% for h in studio.office_hours %}<li><span>{{ h.days }}</span><span>{{ h.hours }}</span></li>{% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="tel:{{ studio.phone_tel }}">{{ studio.phone }}</a></li>
+          <li><a href="mailto:{{ studio.email }}">{{ studio.email }}</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact &amp; directions</a></li>
+          <li><a href="{{ '/calendar/' | relative_url }}">Studio calendar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ studio.name }} &middot; West Orange, NJ &middot; Established {{ studio.established }}</p>
+      <p class="footer-meta">
+        {% if site.github_edit_base and page.path %}<a class="edit-link" href="{{ site.github_edit_base }}{{ page.edit_path | default: page.path }}" target="_blank" rel="noopener" title="Opens the file behind this page on GitHub — your change comes back as a pull request for the studio to review">{% include icon.html name="pencil" %} Suggest an edit</a>{% endif %}
+        <span>Site maintained with <a href="https://siliconsaga.github.io/yggdrasil/gdd/" target="_blank" rel="noopener">GDD</a></span>
+      </p>
+    </div>
+  </div>
+</footer>

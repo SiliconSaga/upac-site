@@ -1,0 +1,17 @@
+---
+title: Our Staff
+lead: Professional dancers, choreographers and educators, several of them UPAC alumnae, led by director and owner Lisa C. Batchelor.
+description: Meet the UPAC teaching staff.
+wide: true
+permalink: /staff/
+---
+<div class="staff-grid">
+  {% assign people = site.staff | sort: "order" %}
+  {% for p in people %}
+  <a class="staff-card" href="{{ p.url | relative_url }}">
+    <img src="{{ p.photo | relative_url }}" alt="{{ p.title }}" loading="lazy">
+    <div class="staff-name">{{ p.title }}</div>
+    <div class="staff-role">{{ p.role | default: "Instructor" }}</div>
+  </a>
+  {% endfor %}
+</div>

@@ -1,0 +1,40 @@
+// Palette — "Stage & Studio". Midnight navy for the stage (hero, footer, title
+// bands), cream and white for the studio (everything you have to read), the
+// logo's royal blue for links, hot pink from the Troupe costumes as the accent.
+$navy-900: #0a162b;
+$navy-800: #0f2142;
+$navy-700: #16305e;
+$navy-ink: #e9eef9;        // text on navy
+$navy-muted: #a9b6d2;      // secondary text on navy
+
+$blue: #2b5fc0;            // from the logo script
+$blue-deep: #1d4694;
+$blue-soft: #e6eefb;
+
+$pink: #e23b8c;
+$pink-deep: #b8256b;
+$pink-soft: #fde4f0;
+
+$cream: #faf6f0;
+$cream-2: #f1eadf;
+$white: #ffffff;
+
+$ink: #1a1f2b;
+$ink-muted: #5a6275;
+$line: #e3dcd0;
+$line-dark: rgba(255, 255, 255, 0.14);
+
+// Type
+$font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+$font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+// Layout
+$maxw: 1140px;
+$radius: 14px;
+$radius-sm: 8px;
+$shadow: 0 10px 30px rgba(10, 22, 43, 0.12);
+$shadow-soft: 0 4px 14px rgba(10, 22, 43, 0.08);
+
+// Breakpoints
+$bp-md: 760px;
+$bp-lg: 1000px;

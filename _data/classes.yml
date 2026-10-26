@@ -1,0 +1,210 @@
+# The 2026–27 class schedule. Each program has a `schedule` list; every entry
+# is one weekly slot. `level` and `who` are optional (single-level programs
+# leave them out). `time` is shown exactly as written; `start` is the same
+# start time in 24-hour form and only sorts the week-at-a-glance view.
+#
+# `age_group` feeds the "find a class by age" cards on the home page:
+#   toddler | preschool | elementary | tween-teen | adult
+#
+# To change a class time, edit the `day:` / `time:` / `start:` lines. To add
+# a level, copy a schedule entry. To add a program, copy a whole block.
+
+- id: you-and-me
+  name: You & Me
+  ages: 18 months – 2½ years
+  age_group: toddler
+  length: 45 minutes
+  description: This class is specifically tailored to assist your child in acquiring new skills and achieving important developmental milestones through the art of dance. The class focuses on cultivating a range of skills, including coordination, balance, rhythm and self-expression, and helping them progress at a pace that suits their individual needs and abilities. As your child masters new skills, you'll have the opportunity to witness their achievements firsthand. Seeing them succeed and grow in confidence will be a source of pride and joy for both you and your child.
+  schedule:
+    - day: Saturday
+      time: 9:00 – 9:45 am
+      start: "09:00"
+
+- id: creative-movement
+  name: Creative Movement
+  ages: 2½ (by Oct. 1) – 3½ years
+  age_group: toddler
+  length: 45 minutes
+  description: Our Creative Movement class is a lively and engaging class designed especially for energetic 2.5–3.5-year-olds! This dynamic class is thoughtfully crafted to foster body awareness and develop essential gross motor skills in a fun and imaginative setting. We use a combination of games, music and props to encourage self-expression, creativity, a love for movement and an introduction to the art of ballet. At the end of the season, parents are invited to a special showcase where our students have the opportunity to share their newfound skills and love for dance with pride.
+  schedule:
+    - day: Saturday
+      time: 9:45 – 10:30 am
+      start: "09:45"
+
+- id: preschool
+  name: Preschool
+  ages: 3½ (by Oct. 1) – 5 years
+  age_group: preschool
+  length: 1 hour
+  description: Our preschool program is thoughtfully designed to instill a lifelong love for movement, music and dance. It provides a foundation of skills for creative expression through ballet, tap and creative movement techniques. Creative Movement encourages imagination and self-expression, which cultivates confidence and empowers them to communicate through their bodies. Ballet fosters poise, balance and coordination, while the rhythmic beats of tap ignite a sense of rhythm and timing in our young dancers.
+  schedule:
+    - day: Wednesday
+      time: 4:30 – 5:30 pm
+      start: "16:30"
+    - day: Saturday
+      time: 10:45 – 11:45 am
+      start: "10:45"
+
+- id: combo-1
+  name: Combo I
+  ages: Kindergarteners
+  age_group: elementary
+  length: 1 hour
+  description: A combination of ballet and tap. Students continue to develop their basic fundamentals in each discipline for a half hour each.
+  schedule:
+    - day: Monday
+      time: 4:30 – 5:30 pm
+      start: "16:30"
+    - day: Saturday
+      time: 11:45 am – 12:45 pm
+      start: "11:45"
+
+- id: combo-2
+  name: Combo II
+  ages: 1st graders and 2nd grade beginners
+  age_group: elementary
+  length: 1 hour
+  description: Ballet, tap and jazz. Students continue to learn new steps, expand their dance vocabulary and begin learning the fundamentals of jazz.
+  schedule:
+    - day: Monday
+      time: 5:30 – 6:30 pm
+      start: "17:30"
+    - day: Saturday
+      time: 12:45 – 1:45 pm
+      start: "12:45"
+
+- id: hip-hop
+  name: Hip Hop
+  ages: 1st – 12th grade
+  age_group: elementary tween-teen
+  length: 1 hour
+  description: Students learn the latest in hip-hop and street dance. Class includes a warm-up followed by age-appropriate dance combinations. Emphasis is on developing individual style.
+  schedule:
+    - level: Hip Hop 1
+      who: 1st – 2nd grade
+      day: Friday
+      time: 4:30 – 5:30 pm
+      start: "16:30"
+    - level: Hip Hop 2
+      who: 3rd – 5th grade
+      day: Friday
+      time: 6:30 – 7:30 pm
+      start: "18:30"
+    - level: Hip Hop 3
+      who: 6th – 8th grade
+      day: Friday
+      time: 5:30 – 6:30 pm
+      start: "17:30"
+    - level: Hip Hop 4
+      who: 9th – 12th grade
+      day: Monday
+      time: 7:45 – 8:45 pm
+      start: "19:45"
+
+- id: ballet
+  name: Ballet
+  ages: 2nd – 12th grade
+  age_group: elementary tween-teen
+  length: 1 – 1½ hours
+  description: Students start by learning the vocabulary and positions of classical ballet. A sensible and fun approach is used to teach correct placement and alignment, which provides an excellent foundation. Students progress to exercises at the barre and in center aimed at improving balance, control and coordination, and learn spatial awareness, dynamics and artistry of movement. Exercises are created to enhance each student's individual qualities, raise their technical level, and focus on healthy technique to create strong and flexible bodies.
+  schedule:
+    - level: Intermediate
+      who: 2nd grade (after Combo II) – 4th grade
+      day: Thursday
+      time: 5:30 – 6:30 pm
+      start: "17:30"
+    - level: Beginner
+      who: 5th – 12th grade, little to no experience
+      day: Thursday
+      time: 6:30 – 7:30 pm
+      start: "18:30"
+    - level: Youth
+      who: 5th – 8th grade, with experience
+      day: Thursday
+      time: 7:30 – 9:00 pm
+      start: "19:30"
+    - level: Teen
+      who: 9th – 12th grade, with experience
+      day: Thursday
+      time: 7:30 – 9:00 pm
+      start: "19:30"
+
+- id: jazz
+  name: Jazz
+  ages: 2nd – 12th grade
+  age_group: elementary tween-teen
+  length: 1 – 1½ hours
+  description: Every class begins with a warm-up and stretches concentrating on correct placement, followed by across-the-floor progressions of leaps, turns, kicks and jumps. Class concludes with a stylistically challenging combination in one of the jazz styles — lyrical, contemporary, modern or street jazz. It is a high-energy class that promises to be fun-filled!
+  schedule:
+    - level: Intermediate
+      who: 2nd grade (after Combo II) – 4th grade
+      day: Thursday
+      time: 4:30 – 5:30 pm
+      start: "16:30"
+    - level: Youth
+      who: 5th – 8th grade, with experience
+      day: Tuesday
+      time: 4:30 – 6:00 pm
+      start: "16:30"
+    - level: Beginner
+      who: 5th – 12th grade, little to no experience
+      day: Tuesday
+      time: 6:30 – 7:30 pm
+      start: "18:30"
+    - level: Teen
+      who: 9th – 12th grade, with experience
+      day: Tuesday
+      time: 7:30 – 9:00 pm
+      start: "19:30"
+
+- id: tap
+  name: Tap
+  ages: 2nd grade – adult
+  age_group: elementary tween-teen adult
+  length: 1 hour
+  description: Dancers use their feet like drums to create rhythmic patterns and timely beats, and are exposed to various styles of tap including Broadway, classical and hoofing. A dancer learns a series of basic steps and builds more difficulty into the combinations, speed and rhythmic patterns as they advance. The objective is to produce clean, clear sounds while stylizing the upper body.
+  schedule:
+    - level: Intermediate
+      who: 2nd grade (after Combo II) – 4th grade
+      day: Wednesday
+      time: 4:45 – 5:45 pm
+      start: "16:45"
+    - level: Beginner
+      who: 5th – 12th grade, little to no experience
+      day: Monday
+      time: 5:45 – 6:45 pm
+      start: "17:45"
+    - level: Youth
+      who: 5th – 8th grade, with experience
+      day: Monday
+      time: 6:45 – 7:45 pm
+      start: "18:45"
+    - level: Teen
+      who: 9th – 12th grade, with experience
+      day: Monday
+      time: 6:45 – 7:45 pm
+      start: "18:45"
+    - level: Adult
+      who: Mixed level
+      day: Monday
+      time: 7:45 – 8:45 pm
+      start: "19:45"
+
+- id: musical-theater
+  name: Musical Theater
+  ages: 1st – 4th grade
+  age_group: elementary
+  length: 1 hour
+  description: Lights, camera, action! This fun and engaging class introduces young performers to the exciting world of musical theater. Students build confidence while exploring the fundamentals of acting, singing and dance through age-appropriate songs, scenes, games and creative activities. Emphasis is placed on stage presence, character development, expression, teamwork and performance skills in a positive and encouraging environment. No previous experience is required — just bring your imagination and a love of performing!
+  schedule:
+    - day: Friday
+      time: 5:30 – 6:30 pm
+      start: "17:30"
+
+- id: pointe
+  name: Pointe
+  ages: By placement only
+  age_group: tween-teen
+  length: Scheduled at placement
+  description: Students must take two ballet classes per week. In order to dance en pointe, a dancer must have had time to achieve the form, strength, turnout, balance and alignment needed to make a successful transition into pointe work. Proper technique is required to rise onto the toes without risk of injury. Students are evaluated to determine whether they are physically ready to meet the demands of pointe work.
+  schedule: []

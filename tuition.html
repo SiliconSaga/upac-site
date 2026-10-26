@@ -1,0 +1,56 @@
+---
+title: Tuition
+eyebrow: 2026–2027 season
+lead: September to June. Season tuition is paid in three 13-week cycles; a few classes run as shorter sessions.
+description: UPAC tuition for the 2026–27 season — per-cycle prices, session classes, multi-class discounts, fees and payment options.
+printable: true
+edit_path: _data/tuition.yml
+---
+{%- assign t = site.data.tuition -%}
+
+<div class="page-tools">
+  <button class="tool-btn" onclick="window.print()">Print this page</button>
+</div>
+
+<h2>Payment cycles</h2>
+<p>{{ t.cycles_intro }}</p>
+<table>
+  <thead><tr><th>Cycle</th><th>Months</th><th>Payment</th></tr></thead>
+  <tbody>
+    {% for c in t.cycles %}<tr><td><strong>{{ c.name }}</strong></td><td>{{ c.months }}</td><td>{{ c.due }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+<p><em>Registration fee: {{ t.registration_fee }}. {{ t.autopay }}</em></p>
+
+<h2>{{ t.per_cycle_title }}</h2>
+<table class="price-table">
+  <thead><tr><th>Class length</th><th>Per cycle</th><th>Classes</th></tr></thead>
+  <tbody>
+    {% for p in t.per_cycle %}<tr><td>{{ p.length }}</td><td>{{ p.price }}</td><td>{{ p.classes }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+
+<div class="callout pink">
+  <h3 style="margin-top:0">{{ t.offers_title }}</h3>
+  <ul style="margin-bottom:.5rem">{% for o in t.offers %}<li>{{ o }}</li>{% endfor %}</ul>
+  <p class="muted" style="font-size:.9rem">{{ t.offers_note }}</p>
+</div>
+
+<h2>{{ t.sessions_title }}</h2>
+<table class="price-table">
+  <thead><tr><th>Class</th><th>Price</th><th>Session</th></tr></thead>
+  <tbody>
+    {% for s in t.sessions %}<tr><td>{{ s.name }}</td><td>{{ s.price }}</td><td>{{ s.weeks }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+
+<h2>Payment and policies</h2>
+<p><strong>We accept:</strong> {{ t.payment.accepted }}. Zelle: <a href="mailto:{{ t.payment.zelle }}">{{ t.payment.zelle }}</a>. {{ t.payment.card_minimum }}.</p>
+<ul>
+  {% for p in t.policies %}<li>{{ p }}</li>{% endfor %}
+</ul>
+
+<div class="btn-row" style="margin-top:2rem">
+  <a class="btn btn-pink" href="{{ '/classes/#register' | relative_url }}">Register for the season</a>
+  <a class="btn btn-outline-ink" href="{{ '/classes/' | relative_url }}">See the class schedule</a>
+</div>
