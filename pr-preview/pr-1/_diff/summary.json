@@ -1,0 +1,30 @@
+{
+  "changed": [
+    "/"
+  ],
+  "added": [
+    "/about/",
+    "/calendar/",
+    "/classes/",
+    "/contact/",
+    "/staff/",
+    "/staff/alyssa-harris/",
+    "/staff/candi-boyd/",
+    "/staff/emma-rosa/",
+    "/staff/kendyll-montague/",
+    "/staff/laura-noesner/",
+    "/staff/lisa-batchelor/",
+    "/staff/lynsey-duverglas/",
+    "/staff/maurice-chestnut/",
+    "/staff/samantha-pankiw/",
+    "/troupe/",
+    "/tuition/"
+  ],
+  "removed": [],
+  "groups": [
+    {
+      "exemplar": "/",
+      "identical": []
+    }
+  ]
+}
