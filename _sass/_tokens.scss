@@ -11,8 +11,11 @@ $blue: #2b5fc0;            // from the logo script
 $blue-deep: #1d4694;
 $blue-soft: #e6eefb;
 
+// $pink is for fills and decoration. Small text needs $pink-deep on light
+// surfaces and $pink-light on navy; plain $pink is under 4.5:1 against both.
 $pink: #e23b8c;
 $pink-deep: #b8256b;
+$pink-light: #ff8ac1;
 $pink-soft: #fde4f0;
 
 $cream: #faf6f0;

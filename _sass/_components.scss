@@ -11,7 +11,7 @@
   transition: transform 0.08s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   &:hover { text-decoration: none; transform: translateY(-1px); }
 }
-.btn-pink { background: $pink; border-color: $pink; color: $white; &:hover { background: $pink-deep; border-color: $pink-deep; } }
+.btn-pink { background: $pink-deep; border-color: $pink-deep; color: $white; &:hover { background: darken($pink-deep, 8%); border-color: darken($pink-deep, 8%); } }
 .btn-blue { background: $blue; border-color: $blue; color: $white; &:hover { background: $blue-deep; border-color: $blue-deep; } }
 .btn-outline { background: transparent; border-color: currentColor; color: inherit; &:hover { background: rgba($white, 0.1); } }
 .btn-outline-ink { background: transparent; border-color: $ink; color: $ink; &:hover { background: $ink; color: $white; } }
@@ -24,7 +24,7 @@ section.block.cream { background: $cream; }
 section.block.navy {
   background: $navy-800;
   color: $navy-ink;
-  .eyebrow { color: $pink; }
+  .eyebrow { color: $pink-light; }
   .lead, .muted { color: $navy-muted; }
   a:not(.btn) { color: $white; text-decoration-color: rgba($white, 0.5); }
 }

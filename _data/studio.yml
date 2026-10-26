@@ -22,9 +22,9 @@ address:
 
 office_hours:
   - days: Monday – Friday
-    hours: 4:30 – 8:30 pm
+    hours: "4:30 – 8:30 pm"
   - days: Saturday
-    hours: 9:00 am – 1:30 pm
+    hours: "9:00 am – 1:30 pm"
   - days: Sunday
     hours: Closed
 

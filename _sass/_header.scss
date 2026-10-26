@@ -1,6 +1,6 @@
 // Announcement strip
 .announce {
-  background: $pink;
+  background: $pink-deep;
   color: $white;
   font-weight: 700;
   font-size: 0.92rem;
@@ -59,7 +59,10 @@
   .nav-cta { margin-left: 0.5rem; }
 }
 
-// Hamburger (CSS-only, checkbox driven — no JavaScript to break)
+// Hamburger (CSS-only, checkbox driven — no JavaScript to break). The checkbox
+// is gone from the tab order on desktop, where there is nothing to toggle, and
+// visually hidden but focusable on phones so keyboard users can open the menu.
+.nav-switch { display: none; }
 .nav-toggle {
   display: none;
   width: 44px; height: 44px;
@@ -74,6 +77,12 @@
 }
 
 @media (max-width: $bp-lg) {
+  .nav-switch {
+    display: block;
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  .nav-switch:focus-visible ~ .nav-toggle { outline: 3px solid $pink-light; outline-offset: 2px; }
   .nav-toggle { display: flex; }
   .nav {
     display: none;

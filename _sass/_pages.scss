@@ -18,6 +18,7 @@
   &::after  { width: 60vw; height: 60vw; max-width: 760px; max-height: 760px; right: -20vw; bottom: -34vw; background: radial-gradient(closest-side, rgba($blue, 0.6), rgba($blue, 0)); }
 
   .container { position: relative; display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 3rem; align-items: center; }
+  .eyebrow { color: $pink-light; }
   h1 { color: $white; margin-bottom: 0.6rem; font-weight: 800; }
   h1 em { font-style: italic; color: $pink-soft; }
   .lead { color: $navy-muted; font-size: 1.2rem; max-width: 34em; }
@@ -97,6 +98,7 @@
   .container { position: relative; }
   h1 { color: $white; margin-bottom: 0.3rem; }
   .lead { color: $navy-muted; margin: 0; max-width: 44em; }
+  .eyebrow { color: $pink-light; }
   .eyebrow a { color: $pink-soft; }
 }
 .page-band--tight { padding: 1.6rem 0; }
@@ -114,7 +116,7 @@
 @media (max-width: 560px) { .week { grid-template-columns: 1fr; } }
 .day {
   background: $white; border: 1px solid $line; border-radius: $radius; padding: 1rem 1.1rem; box-shadow: $shadow-soft;
-  h3 { font-family: $font-body; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: $pink; margin-bottom: 0.6rem; }
+  h3 { font-family: $font-body; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: $pink-deep; margin-bottom: 0.6rem; }
   ul { list-style: none; padding: 0; margin: 0; }
   li { display: grid; grid-template-columns: 7.4rem 1fr; gap: 0.6rem; padding: 0.4rem 0; border-top: 1px dashed $line; font-size: 0.93rem; }
   li:first-child { border-top: 0; }
