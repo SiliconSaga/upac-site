@@ -41,7 +41,7 @@ Published images are already recompressed (`assets/img/`, ~4 MB total). When add
 
 Palette and type live in `_sass/_tokens.scss` ("Stage & Studio": midnight navy for hero, title bands and footer; cream and white for anything to read; the logo's royal blue for links; hot pink for accents). Section backgrounds are driven by classes on `section.block` (`cream`, `white`, `navy`). Do not add a third accent color or a new font without being asked.
 
-The nav is a CSS-only checkbox toggle. There is no JavaScript on the site apart from the print button; keep it that way unless a feature genuinely needs it.
+The nav is a CSS-only checkbox toggle. The only JavaScript is the print button and `assets/js/header.js`, which marks the sticky bar compact once the masthead has scrolled out of view (state comes from scroll position, nothing is stored). Keep it that way unless a feature genuinely needs more.
 
 ## How changes reach the site
 
