@@ -56,7 +56,7 @@ ws exec upac-site bundle exec jekyll build     # catches Liquid and YAML errors
 ws exec upac-site bundle exec jekyll serve     # http://127.0.0.1:4000/upac-site/
 ```
 
-A YAML mistake in a data file (a stray colon, a missing quote around a time like `9:00`) fails the build rather than rendering wrong, which is the better failure. Quote clock times and anything else YAML could read as a number or a nested key: `4:30` alone parses as the integer 270, and `Note: see below` becomes a mapping. URLs such as `https://…` are safe unquoted, and the data files leave them bare.
+Two kinds of YAML mistake in a data file. A syntax error (a stray colon, an unbalanced quote) fails the build, which is the better failure. An ambiguous unquoted value builds fine and renders wrong: `4:30` alone parses as the integer 270 under YAML 1.1, `Note: see below` becomes a nested mapping. So quote clock times and anything else YAML could read as a number or a key. URLs such as `https://…` are safe unquoted, and the data files leave them bare.
 
 ## Workspace idiom (GDD)
 
