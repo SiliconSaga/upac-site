@@ -138,6 +138,9 @@
 .price-table td:nth-child(2) { font-weight: 700; color: $blue-deep; white-space: nowrap; }
 .price-big { font-family: $font-display; font-size: 1.6rem; color: $blue-deep; }
 
+// Calendar
+.calendar-intro { margin-bottom: 1.5rem; .btn-row { margin-bottom: 0.9rem; } p { font-size: 0.95rem; max-width: 70ch; } }
+
 // Staff
 .staff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 @media (max-width: $bp-lg) { .staff-grid { grid-template-columns: 1fr 1fr; } }

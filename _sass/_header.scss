@@ -36,7 +36,7 @@
 }
 .masthead-brand { display: inline-flex; text-decoration: none; flex: none; }
 .masthead-brand .brand-tile { padding: 0.5rem 0.9rem; }
-.masthead-brand img { height: 112px; }
+.masthead-brand img { height: 150px; }
 
 .masthead-info {
   display: flex;
@@ -68,12 +68,12 @@
 .masthead-social { margin-top: 0; }
 
 @media (max-width: $bp-lg) {
-  .masthead-brand img { height: 96px; }
+  .masthead-brand img { height: 128px; }
   .masthead-contact { flex-direction: column; align-items: flex-end; gap: 0.25rem; }
 }
 @media (max-width: $bp-md) {
   .masthead .container { justify-content: center; }
-  .masthead-brand img { height: 80px; }
+  .masthead-brand img { height: 104px; }
   .masthead-info { display: none; }
 }
 
@@ -100,6 +100,8 @@
 
 // The small logo. Hidden while the masthead is on screen (the big one is right
 // above), revealed by `.is-compact` once the masthead has scrolled away.
+// `visibility: hidden` also drops the link from the tab order while it is
+// invisible; the delay keeps it visible until the fade-out has finished.
 .brand {
   display: inline-flex;
   text-decoration: none;
@@ -107,11 +109,12 @@
   overflow: hidden;
   max-width: 0;
   opacity: 0;
+  visibility: hidden;
   transform: translateY(4px);
-  transition: max-width 0.3s ease, opacity 0.25s ease, transform 0.3s ease;
-  img { height: 40px; }
+  transition: max-width 0.3s ease, opacity 0.25s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  img { height: 48px; }
 }
-.site-header.is-compact .brand { max-width: 160px; opacity: 1; transform: none; }
+.site-header.is-compact .brand { max-width: 180px; opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
 
 .nav {
   display: flex;
