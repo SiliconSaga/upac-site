@@ -22,7 +22,7 @@ Only repeat specifics someone gave you or that you read in this repository. Know
 | Tuition | `_data/tuition.yml` | `tuition.html` |
 | Season label, registration links | `_data/season.yml` | hero, header Register button, Classes registration box |
 | Banner strip, "Coming up" | `_data/announcements.yml` | header, hero |
-| Studio contact, hours, socials, calendar, partner, parties | `_data/studio.yml` | header, footer, Contact, home |
+| Studio contact, hours, socials, calendar links (embed, open, iCal), partner, parties | `_data/studio.yml` | header, footer, Contact, Calendar, home |
 | Gallery captions | `_data/gallery.yml` | home "What's happening", Troupe photo grid |
 | Staff bios | `_staff/*.md` (collection, `order:` sorts) | `staff.html`, `_layouts/staff.html` |
 | Menu | `_data/nav.yml` | header |
