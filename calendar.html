@@ -2,9 +2,20 @@
 title: Calendar
 lead: Studio closures, show dates, spirit weeks and community performances, straight from the studio's shared Google Calendar.
 description: The UPAC studio calendar — closures, performances, spirit weeks and events.
+edit_path: _data/studio.yml
 ---
 {%- assign cal = site.data.studio.calendar -%}
+<div class="calendar-intro">
+  <div class="btn-row">
+    <a class="btn btn-blue" href="{{ cal.link }}" target="_blank" rel="noopener">Open in Google Calendar</a>
+    <a class="btn btn-outline-ink" href="{{ cal.ical }}">Subscribe in another calendar app</a>
+  </div>
+  <p class="muted">
+    <strong>Follow the whole calendar:</strong> in Google Calendar, use <em>Add to Google Calendar</em> under the calendar below (the <em>+</em> on phones). In Apple Calendar, Outlook or another app, paste the subscribe link above into its &ldquo;add calendar from URL&rdquo; option.
+    <strong>Copy one event:</strong> click it below, then choose <em>Copy to my calendar</em>.
+  </p>
+</div>
+
 <div class="embed embed--calendar">
   <iframe src="{{ cal.embed }}" title="UPAC studio calendar" loading="lazy"></iframe>
 </div>
-<p style="margin-top:1rem"><a href="{{ cal.link }}" target="_blank" rel="noopener">Open the full calendar in Google Calendar &rarr;</a></p>

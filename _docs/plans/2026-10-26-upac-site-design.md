@@ -24,7 +24,7 @@ Chosen over a fully light "Studio Light" and a black-and-white "Playbill" direct
 - **Studio** surfaces (everything you read: classes, tuition, bios) are cream and white.
 - **Royal blue** from the script logo for links and primary buttons; **hot pink** from the Troupe costumes for the accent, the Register button and the announcement strip.
 - Playfair Display for display type, Nunito Sans for body. The logo itself is kept unchanged on a white tile.
-- No JavaScript except the print button; the mobile nav is a checkbox toggle.
+- Almost no JavaScript: the print button, and a few lines that collapse the header once the masthead (full-size logo and contact details) scrolls away. The mobile nav is a checkbox toggle.
 
 ## Structure
 

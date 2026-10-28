@@ -48,6 +48,8 @@ calendar:
   id: uuqca5917caj4e2m4liqoud9q8@group.calendar.google.com
   embed: https://calendar.google.com/calendar/embed?showNav=1&showPrint=0&showTabs=1&showTz=0&wkst=1&bgcolor=%23FFFFFF&src=uuqca5917caj4e2m4liqoud9q8%40group.calendar.google.com&color=%23182C57&ctz=America%2FNew_York
   link: https://calendar.google.com/calendar/embed?src=uuqca5917caj4e2m4liqoud9q8@group.calendar.google.com
+  # Public iCal feed of the same calendar, for Apple Calendar, Outlook and other apps.
+  ical: https://calendar.google.com/calendar/ical/uuqca5917caj4e2m4liqoud9q8%40group.calendar.google.com/public/basic.ics
 
 # Birthday parties, from the studio's social post.
 parties:

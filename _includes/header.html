@@ -8,10 +8,36 @@
 </div>
 {%- endif %}
 
-<header class="site-header">
+{%- comment -%}
+Masthead: the logo at a size you can read, plus the studio's contact details.
+It scrolls away with the page like any other content. Once it has left the
+viewport, assets/js/header.js marks the sticky bar below as compact and a small
+logo slides into it, so the top of the page never loses the brand.
+{%- endcomment %}
+<div class="masthead" id="masthead">
+  <div class="container">
+    <a class="masthead-brand" href="{{ '/' | relative_url }}" aria-label="{{ studio.name }} — home">
+      <span class="brand-tile"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="{{ studio.name }} — {{ site.tagline }}" width="512" height="200"></span>
+    </a>
+    <div class="masthead-info">
+      <ul class="masthead-contact">
+        <li><a href="{{ studio.address.map_url }}" target="_blank" rel="noopener">{% include icon.html name="pin" %}<span>{{ studio.address.street }}, {{ studio.address.city }}</span></a></li>
+        <li><a href="tel:{{ studio.phone_tel }}">{% include icon.html name="phone" %}<span>{{ studio.phone }}</span></a></li>
+        <li><a href="mailto:{{ studio.email }}">{% include icon.html name="mail" %}<span>{{ studio.email }}</span></a></li>
+      </ul>
+      <ul class="social masthead-social">
+        {% for s in studio.social %}
+        <li><a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ studio.name }} on {{ s.name }}">{% include icon.html name=s.icon %}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" id="site-header">
   <div class="container">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ studio.name }} — home">
-      <span class="brand-tile"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="{{ studio.name }}" width="256" height="101"></span>
+      <span class="brand-tile"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="" width="512" height="200"></span>
     </a>
 
     {%- comment -%} Visually hidden but focusable: Tab reaches it, Space toggles the menu, and the focus ring shows on the visible hamburger. {%- endcomment %}

@@ -22,7 +22,7 @@ Only repeat specifics someone gave you or that you read in this repository. Know
 | Tuition | `_data/tuition.yml` | `tuition.html` |
 | Season label, registration links | `_data/season.yml` | hero, header Register button, Classes registration box |
 | Banner strip, "Coming up" | `_data/announcements.yml` | header, hero |
-| Studio contact, hours, socials, calendar, partner, parties | `_data/studio.yml` | header, footer, Contact, home |
+| Studio contact, hours, socials, calendar links (embed, open, iCal), partner, parties | `_data/studio.yml` | header, footer, Contact, Calendar, home |
 | Gallery captions | `_data/gallery.yml` | home "What's happening", Troupe photo grid |
 | Staff bios | `_staff/*.md` (collection, `order:` sorts) | `staff.html`, `_layouts/staff.html` |
 | Menu | `_data/nav.yml` | header |
@@ -41,7 +41,7 @@ Published images are already recompressed (`assets/img/`, ~4 MB total). When add
 
 Palette and type live in `_sass/_tokens.scss` ("Stage & Studio": midnight navy for hero, title bands and footer; cream and white for anything to read; the logo's royal blue for links; hot pink for accents). Section backgrounds are driven by classes on `section.block` (`cream`, `white`, `navy`). Do not add a third accent color or a new font without being asked.
 
-The nav is a CSS-only checkbox toggle. There is no JavaScript on the site apart from the print button; keep it that way unless a feature genuinely needs it.
+The nav is a CSS-only checkbox toggle. The only JavaScript is the print button and `assets/js/header.js`, which marks the sticky bar compact once the masthead has scrolled out of view (state comes from scroll position, nothing is stored). Keep it that way unless a feature genuinely needs more.
 
 ## How changes reach the site
 
@@ -56,7 +56,7 @@ ws exec upac-site bundle exec jekyll build     # catches Liquid and YAML errors
 ws exec upac-site bundle exec jekyll serve     # http://127.0.0.1:4000/upac-site/
 ```
 
-A YAML mistake in a data file (a stray colon, a missing quote around a time like `9:00`) fails the build rather than rendering wrong, which is the better failure. Quote any value with a colon in it.
+Two kinds of YAML mistake in a data file. A syntax error (a stray colon, an unbalanced quote) fails the build, which is the better failure. An ambiguous unquoted value builds fine and renders wrong: `4:30` alone parses as the integer 270 under YAML 1.1, `Note: see below` becomes a nested mapping. So quote clock times and anything else YAML could read as a number or a key. URLs such as `https://…` are safe unquoted, and the data files leave them bare.
 
 ## Workspace idiom (GDD)
 
