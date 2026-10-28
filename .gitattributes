@@ -1,0 +1,8 @@
+# Normalise line endings so Windows and the Linux CI runner see the same bytes.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary

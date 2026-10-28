@@ -1,0 +1,14 @@
+# The current season and how to register. This drives the home page hero,
+# the Register button in the header, and the registration box on Classes.
+label: 2026–2027 Season
+headline: Still time to register!
+intro: Classes for ages 18 months through adult, September to June, in the heart of West Orange.
+
+registration:
+  how: Email us to make an in-person registration appointment.
+  before_you_arrive: Before you arrive for your appointment, please fill out the pre-registration form that matches you.
+  new_families_label: First season at UPAC
+  new_families_url: https://app.akadadance.com/customer/login?schoolId=AK601733J&c=1
+  returning_families_label: Returning families
+  returning_families_url: https://app.akadadance.com/customer/login?schoolId=AK601733J&a=1
+  dress_code_note: All class dress code requirements will be provided at registration.

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- comment -%}
+Standard inner page: a navy title band, then the page body on cream. Pages
+can set `lead:` for a one-line subtitle under the title and `wide: true` to
+use the full container width for tables.
+{%- endcomment -%}
+<section class="page-band">
+  <div class="container">
+    {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+  </div>
+</section>
+
+<article class="page-body{% if page.wide %} page-body--wide{% endif %}">
+  <div class="container">
+    {{ content }}
+  </div>
+</article>

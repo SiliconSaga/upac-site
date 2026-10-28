@@ -1,0 +1,10 @@
+---
+title: Calendar
+lead: Studio closures, show dates, spirit weeks and community performances, straight from the studio's shared Google Calendar.
+description: The UPAC studio calendar — closures, performances, spirit weeks and events.
+---
+{%- assign cal = site.data.studio.calendar -%}
+<div class="embed embed--calendar">
+  <iframe src="{{ cal.embed }}" title="UPAC studio calendar" loading="lazy"></iframe>
+</div>
+<p style="margin-top:1rem"><a href="{{ cal.link }}" target="_blank" rel="noopener">Open the full calendar in Google Calendar &rarr;</a></p>

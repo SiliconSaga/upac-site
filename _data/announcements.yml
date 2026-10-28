@@ -1,0 +1,19 @@
+# Short-lived notices. Edit freely; delete a block to hide it.
+
+# The thin strip across the very top of every page. Leave `text` empty to
+# hide the strip entirely.
+banner:
+  text: "October is Breast Cancer Awareness Month — help us raise money for AAnglesNJ."
+  url:
+
+# The "Coming up" box on the home page. One entry per line; `date` is shown
+# as written, so "Oct 19–24" is fine.
+coming_up:
+  title: Coming up in October
+  items:
+    - date: Oct 11
+      text: Diwali Festival Performance
+    - date: Oct 19–24
+      text: Wear It Pink Week
+    - date: Oct 26–31
+      text: Dress Up Week

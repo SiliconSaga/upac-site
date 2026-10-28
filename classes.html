@@ -1,0 +1,80 @@
+---
+title: Classes
+eyebrow: 2026–27 season schedule
+lead: Classes starting at age 18 months. Our goal is to nurture, develop, challenge, and cultivate self-expression and self-confidence.
+description: UPAC's 2026–27 class schedule — You & Me, Creative Movement, Preschool, Combo, Hip Hop, Ballet, Jazz, Tap, Musical Theater and Pointe in West Orange, NJ.
+wide: true
+printable: true
+edit_path: _data/classes.yml
+---
+{%- assign season = site.data.season -%}
+{%- assign studio = site.data.studio -%}
+
+<div class="page-tools">
+  <button class="tool-btn" onclick="window.print()">Print this schedule</button>
+</div>
+
+<p class="prose">UPAC offers a professional and disciplined atmosphere in the study of dance. Our diverse staff includes professional dancers, choreographers and educators who enthusiastically share their years of experience with our students.</p>
+
+<div class="callout pink" id="register">
+  <h3 style="margin-top:0">{{ season.headline }}</h3>
+  <p>{{ season.registration.how }} <a href="mailto:{{ studio.email }}?subject=Registration%20appointment">{{ studio.email }}</a></p>
+  <p>{{ season.registration.before_you_arrive }}</p>
+  <div class="btn-row">
+    <a class="btn btn-pink" href="{{ season.registration.new_families_url }}" target="_blank" rel="noopener">{{ season.registration.new_families_label }} &rarr;</a>
+    <a class="btn btn-blue" href="{{ season.registration.returning_families_url }}" target="_blank" rel="noopener">{{ season.registration.returning_families_label }} &rarr;</a>
+  </div>
+  <p style="margin-top:1rem"><em>{{ season.registration.dress_code_note }}</em> See <a href="{{ '/tuition/' | relative_url }}">tuition</a> for prices and payment cycles.</p>
+</div>
+
+<h2>The week at a glance</h2>
+{%- assign days = "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday" | split: "," -%}
+<div class="week">
+  {% for day in days %}
+  {%- assign rows = "" | split: "" -%}
+  {%- for c in site.data.classes -%}{%- for s in c.schedule -%}{%- if s.day == day -%}
+    {%- capture row %}{{ s.start }}|{{ s.time }}|{{ c.name }}|{{ s.level }}|{{ s.who | default: c.ages }}|{{ c.id }}{% endcapture -%}
+    {%- assign rows = rows | push: row -%}
+  {%- endif -%}{%- endfor -%}{%- endfor -%}
+  {%- assign rows = rows | sort -%}
+  <div class="day">
+    <h3>{{ day }}</h3>
+    <ul>
+      {% for row in rows %}{% assign f = row | split: "|" %}
+      <li>
+        <span class="time">{{ f[1] }}</span>
+        <span class="what"><a href="#{{ f[5] }}">{% if f[3] contains f[2] %}{{ f[3] }}{% elsif f[3] != "" %}{{ f[2] }} &middot; {{ f[3] }}{% else %}{{ f[2] }}{% endif %}</a><span class="who">{{ f[4] }}</span></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Programs</h2>
+{% for c in site.data.classes %}
+<section class="program" id="{{ c.id }}">
+  <div class="program-head">
+    <h3>{{ c.name }}</h3>
+    <span class="tag">{{ c.ages }}</span>
+    <span class="program-meta">{{ c.length }}</span>
+  </div>
+  <p class="prose">{{ c.description }}</p>
+  {% if c.schedule.size > 0 %}
+  <ul class="slots">
+    {% for s in c.schedule %}
+    <li>
+      <span class="when">{{ s.day }} {{ s.time }}</span>
+      <span>{% if s.level %}<strong>{{ s.level }}</strong>{% if s.who %} &middot; {% endif %}{% endif %}<span class="who">{{ s.who }}</span></span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+{% endfor %}
+
+<h2 id="dress-code">The Dress Code</h2>
+<div class="callout">
+  <p><strong>The Dress Code is our in-house retail store that carries all items required for classes.</strong> In addition we carry UPAC paraphernalia.</p>
+  <p><strong>Requirements for classes:</strong> our dress code requirements for each class are stipulated at registration and will be enforced to maintain UPAC's high standards.</p>
+</div>

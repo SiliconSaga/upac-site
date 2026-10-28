@@ -1,0 +1,165 @@
+---
+layout: default
+title: Home
+---
+{%- assign studio = site.data.studio -%}
+{%- assign season = site.data.season -%}
+{%- assign ann = site.data.announcements -%}
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <p class="eyebrow">{{ season.label }} &middot; Established {{ studio.established }} &middot; West Orange, NJ</p>
+      <h1>Dedicated to excellence in the <em>performing arts</em></h1>
+      <p class="lead">{{ season.intro }}</p>
+      <div class="btn-row">
+        <a class="btn btn-pink" href="{{ '/classes/#register' | relative_url }}">{{ season.headline }}</a>
+        <a class="btn btn-outline" href="{{ '/classes/' | relative_url }}">See the class schedule</a>
+      </div>
+      <p class="hero-meta">Ballet &middot; Tap &middot; Jazz &middot; Hip Hop &middot; Musical Theater &middot; Creative Movement &middot; Pointe &middot; the award-winning UPAC Troupe</p>
+    </div>
+
+    {% if ann.coming_up and ann.coming_up.items.size > 0 %}
+    <aside class="coming-up" aria-label="Coming up">
+      <h3>{% include icon.html name="calendar" %} {{ ann.coming_up.title }}</h3>
+      <ul>
+        {% for item in ann.coming_up.items %}
+        <li><span class="date">{{ item.date }}</span><span>{{ item.text }}</span></li>
+        {% endfor %}
+      </ul>
+      <p class="more"><a href="{{ '/calendar/' | relative_url }}">Full studio calendar &rarr;</a></p>
+    </aside>
+    {% endif %}
+  </div>
+</section>
+
+<section class="block cream">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule"></div>
+      <p class="eyebrow">Find your class</p>
+      <h2>Classes for every age, from first steps to pointe shoes</h2>
+      <p class="lead">Pick an age to see what's on offer. Most classes meet once a week from September to June; You &amp; Me, Musical Theater and Adult Tap run as shorter sessions, and Pointe is scheduled by placement.</p>
+    </div>
+    {%- assign groups = "toddler|18 mo – 3½|Toddlers,preschool|3½ – 5|Preschool,elementary|K – 5th|Elementary,tween-teen|6th – 12th|Tweens & Teens,adult|Adults|Grown-ups" | split: "," -%}
+    <div class="age-grid">
+      {% for g in groups %}{% assign f = g | split: "|" %}
+      <a class="age-card" href="{{ '/classes/' | relative_url }}">
+        <span class="age-range">{{ f[1] }}</span>
+        <span class="age-label">{{ f[2] }}</span>
+        {%- assign names = "" | split: "" -%}
+        {%- for c in site.data.classes %}{% if c.age_group contains f[0] %}{% assign names = names | push: c.name %}{% endif %}{% endfor -%}
+        <small>{{ names | join: ", " }}</small>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block white">
+  <div class="container">
+    <div class="split">
+      <img src="{{ '/assets/img/gallery/student-of-the-year.jpg' | relative_url }}" alt="Shanna LeFleur, UPAC 2023–2024 Student of the Year, posing in a black leotard. Quote: It takes an athlete to dance, but an artist to be a dancer." loading="lazy">
+      <div>
+        <div class="rule"></div>
+        <p class="eyebrow">About UPAC</p>
+        <h2>A place that's different from the typical dance studio</h2>
+        <p>Founded in 1998 by director and owner Lisa C. Batchelor, UPAC is an artistic outlet with a family atmosphere: a place to work toward individual goals while belonging to a cohesive group. Students learn proper technique in ballet, jazz, tap, hip-hop and musical theater, and along the way, teamwork, sportsmanship, responsibility, leadership and confidence.</p>
+        <p>Every season closes with a Spring Performance on a full-sized stage, with professional sound, lighting, props and backdrops, and a specially choreographed number where dads dance with their kids.</p>
+        <div class="btn-row">
+          <a class="btn btn-blue" href="{{ '/about/' | relative_url }}">Our story</a>
+          <a class="btn btn-outline-ink" href="{{ '/staff/' | relative_url }}">Meet the staff</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block navy">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="rule"></div>
+        <p class="eyebrow">UPAC Troupe</p>
+        <h2>Our award-winning competitive team</h2>
+        <p>A select group of dancers, ages seven to eighteen, chosen for technique, performance quality and dedication. Troupe members train with master teachers, compete regionally and nationally, and perform at community events throughout the year, with the emphasis on self-improvement rather than trophies.</p>
+        <a class="btn btn-pink" href="{{ '/troupe/' | relative_url }}">Meet the Troupe</a>
+      </div>
+      <img src="{{ '/assets/img/troupe/troupe-2025-26.jpg' | relative_url }}" alt="The full UPAC Troupe in black team jackets covered in competition pins" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{% assign posts = site.data.gallery.home %}
+{% if posts and posts.size > 0 %}
+<section class="block cream">
+  <div class="container">
+    <div class="section-head center">
+      <div class="rule"></div>
+      <p class="eyebrow">What's happening</p>
+      <h2>Life at UPAC</h2>
+      <p class="lead">Spirit weeks, parades, fundraisers and show season. Follow along on <a href="https://www.instagram.com/uniqueperformanceartscenter/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/upacwestorange" target="_blank" rel="noopener">Facebook</a>.</p>
+    </div>
+    <div class="gallery">
+      {% for p in posts limit: 8 %}
+      <figure{% if p.tall %} class="tall"{% endif %}>
+        <img src="{{ '/assets/img/gallery/' | append: p.file | relative_url }}" alt="{{ p.alt | default: p.caption }}" loading="lazy">
+        <figcaption>{{ p.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="block white">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="feature">
+          <img src="{{ '/assets/img/gallery/birthday-parties.jpg' | relative_url }}" alt="UPAC birthday parties poster: you pick the theme, ages 3 to 10" loading="lazy">
+          <div>
+            <p class="eyebrow">Birthday parties</p>
+            <h3>Reserve your date today</h3>
+            <p>Dance parties for ages {{ studio.parties.ages }}. {{ studio.parties.blurb }}</p>
+            <a class="btn btn-blue" href="mailto:{{ studio.email }}?subject=Birthday%20party">Email us about a party</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="feature">
+          <img src="{{ studio.partner.image | relative_url }}" alt="{{ studio.partner.name }}" loading="lazy">
+          <div>
+            <p class="eyebrow">Also at UPAC</p>
+            <h3>{{ studio.partner.name }}</h3>
+            <p><em>{{ studio.partner.tagline }}.</em> Director: {{ studio.partner.director }}.</p>
+            <p><a href="{{ studio.partner.url }}" target="_blank" rel="noopener">{{ studio.partner.url_text }}</a> &middot; {{ studio.partner.phone }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block cream">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="rule"></div>
+        <p class="eyebrow">Visit the studio</p>
+        <h2>{{ studio.address.street }}, {{ studio.address.city }}</h2>
+        <p>{{ studio.address.directions }}</p>
+        <ul class="rows">
+          {% for h in studio.office_hours %}<li><span>{{ h.days }}</span><span>{{ h.hours }}</span></li>{% endfor %}
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-blue" href="{{ '/contact/' | relative_url }}">Contact &amp; directions</a>
+          <a class="btn btn-outline-ink" href="tel:{{ studio.phone_tel }}">Call {{ studio.phone }}</a>
+        </div>
+      </div>
+      <div class="embed embed--map">
+        <iframe src="{{ studio.address.map_embed }}" title="Map to {{ studio.name }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,105 @@
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  line-height: 1.2;
+  transition: transform 0.08s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  &:hover { text-decoration: none; transform: translateY(-1px); }
+}
+.btn-pink { background: $pink-deep; border-color: $pink-deep; color: $white; &:hover { background: darken($pink-deep, 8%); border-color: darken($pink-deep, 8%); } }
+.btn-blue { background: $blue; border-color: $blue; color: $white; &:hover { background: $blue-deep; border-color: $blue-deep; } }
+.btn-outline { background: transparent; border-color: currentColor; color: inherit; &:hover { background: rgba($white, 0.1); } }
+.btn-outline-ink { background: transparent; border-color: $ink; color: $ink; &:hover { background: $ink; color: $white; } }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; &.center { justify-content: center; } }
+
+// Section rhythm
+section.block { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+section.block.white { background: $white; }
+section.block.cream { background: $cream; }
+section.block.navy {
+  background: $navy-800;
+  color: $navy-ink;
+  .eyebrow { color: $pink-light; }
+  .lead, .muted { color: $navy-muted; }
+  a:not(.btn) { color: $white; text-decoration-color: rgba($white, 0.5); }
+}
+
+.section-head { max-width: 720px; margin-bottom: 2rem; &.center { margin-left: auto; margin-right: auto; text-align: center; } h2 { margin-bottom: 0.4rem; } }
+.rule { width: 56px; height: 3px; background: $pink; border-radius: 2px; margin: 0 0 1rem; }
+.section-head.center .rule { margin-left: auto; margin-right: auto; }
+
+// Cards and grids
+.grid { display: grid; gap: 1.25rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: $bp-lg) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+.card {
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $radius;
+  padding: 1.4rem;
+  box-shadow: $shadow-soft;
+  h3 { margin-bottom: 0.4rem; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+}
+a.card { color: inherit; text-decoration: none; display: block; transition: border-color 0.15s ease, transform 0.08s ease; &:hover { border-color: $blue; transform: translateY(-2px); } }
+
+.callout {
+  background: $blue-soft;
+  border-left: 4px solid $blue;
+  border-radius: $radius-sm;
+  padding: 1.1rem 1.3rem;
+  margin: 0 0 1.5rem;
+  p:last-child { margin-bottom: 0; }
+  &.pink { background: $pink-soft; border-left-color: $pink; }
+}
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+.split img { border-radius: $radius; box-shadow: $shadow; }
+@media (max-width: $bp-md) { .split { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $blue-deep;
+  background: $blue-soft;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+// Definition rows (hours, cycles)
+.rows { list-style: none; padding: 0; margin: 0 0 1rem; }
+.rows li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid $line; }
+.rows li:last-child { border-bottom: 0; }
+.rows li span:first-child { font-weight: 600; }
+
+// Inline icon helper
+.icon { width: 1.1em; height: 1.1em; vertical-align: -0.18em; }
+.with-icon { display: inline-flex; align-items: center; gap: 0.45rem; }
+
+// Responsive embed (map, calendar)
+.embed { position: relative; width: 100%; border-radius: $radius; overflow: hidden; border: 1px solid $line; background: $white; box-shadow: $shadow-soft; }
+.embed iframe { display: block; width: 100%; border: 0; }
+.embed--map iframe { height: 380px; }
+.embed--calendar iframe { height: 640px; }
+
+// Page toolbar (print button) — hidden on phones
+.page-tools { display: none; gap: 0.5rem; margin: -0.5rem 0 1.25rem; }
+@media (min-width: $bp-md) { .page-tools { display: flex; } }
+.tool-btn {
+  font: inherit; font-size: 0.88rem; font-weight: 600;
+  background: $white; color: $blue-deep; border: 1px solid $line; border-radius: 6px;
+  padding: 0.4rem 0.8rem; cursor: pointer; text-decoration: none;
+  &:hover { background: $blue-soft; }
+}

@@ -1,0 +1,31 @@
+{%- assign studio = site.data.studio -%}
+{%- assign ann = site.data.announcements -%}
+{%- if ann.banner.text and ann.banner.text != "" -%}
+<div class="announce">
+  <div class="container">
+    {% if ann.banner.url %}<a href="{{ ann.banner.url }}">{{ ann.banner.text }}</a>{% else %}{{ ann.banner.text }}{% endif %}
+  </div>
+</div>
+{%- endif %}
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ studio.name }} — home">
+      <span class="brand-tile"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="{{ studio.name }}" width="256" height="101"></span>
+    </a>
+
+    {%- comment -%} Visually hidden but focusable: Tab reaches it, Space toggles the menu, and the focus ring shows on the visible hamburger. {%- endcomment %}
+    <input type="checkbox" id="nav-switch" class="nav-switch" aria-label="Open menu" aria-controls="site-nav">
+    <label class="nav-toggle" for="nav-switch" aria-hidden="true"><span></span><span></span><span></span></label>
+
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {% for item in site.data.nav %}
+        {% assign is_active = false %}
+        {% if item.url == "/" and page.url == "/" %}{% assign is_active = true %}{% endif %}
+        {% if item.url != "/" and page.url contains item.url %}{% assign is_active = true %}{% endif %}
+        <a href="{{ item.url | relative_url }}"{% if is_active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+      <a class="btn btn-pink nav-cta" href="{{ '/classes/#register' | relative_url }}">Register</a>
+    </nav>
+  </div>
+</header>

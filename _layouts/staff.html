@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="page-band page-band--tight">
+  <div class="container">
+    <p class="eyebrow"><a href="{{ '/staff/' | relative_url }}">Our Staff</a></p>
+    <h1>{{ page.title }}</h1>
+    {% if page.role %}<p class="lead">{{ page.role }}</p>{% endif %}
+  </div>
+</section>
+
+<article class="page-body">
+  <div class="container">
+    <div class="bio">
+      <figure class="bio-photo">
+        <img src="{{ page.photo | relative_url }}" alt="{{ page.title }}">
+      </figure>
+      <div class="bio-text">
+        {{ content }}
+        <p class="bio-back"><a href="{{ '/staff/' | relative_url }}">&larr; Back to all staff</a></p>
+      </div>
+    </div>
+  </div>
+</article>
