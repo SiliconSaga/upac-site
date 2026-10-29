@@ -1,0 +1,113 @@
+{
+  "changed": [
+    "/",
+    "/about/",
+    "/calendar/",
+    "/classes/",
+    "/contact/",
+    "/staff/",
+    "/staff/alyssa-harris/",
+    "/staff/candi-boyd/",
+    "/staff/emma-rosa/",
+    "/staff/kendyll-montague/",
+    "/staff/laura-noesner/",
+    "/staff/lisa-batchelor/",
+    "/staff/lynsey-duverglas/",
+    "/staff/maurice-chestnut/",
+    "/staff/samantha-pankiw/",
+    "/troupe/",
+    "/tuition/"
+  ],
+  "added": [
+    "/news/",
+    "/news/2025/bring-a-buddy-week-2025/",
+    "/news/2025/congratulations-class-of-2025/",
+    "/news/2025/dress-up-week-2025/",
+    "/news/2025/holiday-sweaters-at-town-hall/",
+    "/news/2025/show-2025/",
+    "/news/2025/troupe-countdown-to-nationals-2025/",
+    "/news/2026/breast-cancer-awareness-fundraiser/",
+    "/news/2026/dance-your-heart-out/",
+    "/news/2026/happy-first-week-of-classes/",
+    "/news/2026/mlk-celebration-2026/",
+    "/news/2026/our-2026-seniors/",
+    "/news/2026/pink-ribbons-on-the-studio-wall/",
+    "/news/2026/show-2026/",
+    "/news/2026/spirit-week-recap-2026/",
+    "/news/2026/st-patricks-day-parade-2026/",
+    "/news/2026/wear-it-pink-week/",
+    "/news/2026/wear-red-week-2026/",
+    "/news/2026/welcome-to-our-dance-class/"
+  ],
+  "removed": [],
+  "groups": [
+    {
+      "exemplar": "/",
+      "identical": []
+    },
+    {
+      "exemplar": "/about/",
+      "identical": []
+    },
+    {
+      "exemplar": "/calendar/",
+      "identical": []
+    },
+    {
+      "exemplar": "/classes/",
+      "identical": []
+    },
+    {
+      "exemplar": "/contact/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/alyssa-harris/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/candi-boyd/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/emma-rosa/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/kendyll-montague/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/laura-noesner/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/lisa-batchelor/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/lynsey-duverglas/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/maurice-chestnut/",
+      "identical": []
+    },
+    {
+      "exemplar": "/staff/samantha-pankiw/",
+      "identical": []
+    },
+    {
+      "exemplar": "/troupe/",
+      "identical": []
+    },
+    {
+      "exemplar": "/tuition/",
+      "identical": []
+    }
+  ]
+}
