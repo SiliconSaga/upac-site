@@ -38,17 +38,9 @@ photo: /assets/img/staff/full-name.jpg
 Their bio, as long or short as you like.
 ```
 
-### Adding a photo to "What's happening"
+### Adding to "What's happening"
 
-Drop the image in `assets/img/gallery/` (a phone photo or a square/portrait social post is perfect; big files are fine, but under 1 MB is kinder to phones), then add three lines at the **top** of the `home:` list in `_data/gallery.yml`:
-
-```yaml
-  - file: nutcracker-tickets-2026.jpg
-    caption: Nutcracker tickets on sale now
-    alt: Poster for the UPAC Nutcracker performance
-```
-
-The home page shows the newest eight.
+Write a news post (see [News posts](#news-posts)): one file in `_posts/`, the image in `assets/news/<post>/`. A phone photo or a square or portrait social graphic is perfect; under 1 MB is kinder to phones. The home page shows the newest eight posts. The "Add a post" link in the footer of the News page opens a new file in the right folder on GitHub.
 
 ### Changing the top announcement
 

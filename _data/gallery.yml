@@ -1,5 +1,6 @@
 # Photo strip on the Troupe page. Files live in assets/img/troupe/. To add one:
-# drop the image in the folder, add an entry, write a one-line caption.
+# drop the image in the folder, add an entry with a one-line caption and an
+# alt text that says what is in the photo for someone who cannot see it.
 #
 # News and event pictures are not here any more: each is a post in _posts/
 # with its image under assets/news/<slug>/ (see README, "News posts").

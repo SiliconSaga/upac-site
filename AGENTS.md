@@ -23,7 +23,7 @@ Only repeat specifics someone gave you or that you read in this repository. Know
 | Season label, registration links | `_data/season.yml` | hero, header Register button, Classes registration box |
 | Banner strip, "Coming up" | `_data/announcements.yml` | header, hero |
 | Studio contact, hours, socials, calendar links (embed, open, iCal), partner, parties | `_data/studio.yml` | header, footer, Contact, Calendar, home |
-| Gallery captions | `_data/gallery.yml` | home "What's happening", Troupe photo grid |
+| Troupe photo captions | `_data/gallery.yml` | Troupe photo grid |
 | Staff bios | `_staff/*.md` (collection, `order:` sorts) | `staff.html`, `_layouts/staff.html` |
 | Menu | `_data/nav.yml` | header |
 | News posts | `_posts/YYYY-MM-DD-slug.md`, images in `assets/news/<slug>/` | News page, home "What's happening", `/feed.xml`, `/news/feed.json` |
