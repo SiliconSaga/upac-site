@@ -9,7 +9,9 @@
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{% if page.title and page.url != '/' %}{{ page.title }} · {{ site.short_title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | strip }}">
-  <meta property="og:image" content="{{ '/assets/img/og-card.jpg' | absolute_url }}">
+  <meta property="og:image" content="{{ page.image | default: '/assets/img/og-card.jpg' | absolute_url }}">
+  {% feed_meta %}
+  <link rel="alternate" type="application/feed+json" title="{{ site.title }} news (JSON Feed)" href="{{ '/news/feed.json' | absolute_url }}">
   <meta name="theme-color" content="#0a162b">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">

@@ -1,0 +1,22 @@
+{%- comment -%}
+Cards for news posts, newest first. Pass limit=N to cap it.
+Usage: {% include post-grid.html limit=8 %}
+{%- endcomment -%}
+{%- assign limit = include.limit | default: 1000 -%}
+{%- if site.posts.size == 0 -%}
+<p><em>No posts yet.</em></p>
+{%- else -%}
+<ul class="post-grid">
+  {%- for post in site.posts limit: limit %}
+  <li>
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" loading="lazy">{% endif %}
+      <span class="post-card-text">
+        <small>{% include post-date.html post=post %}</small>
+        <strong>{{ post.title }}</strong>
+      </span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif -%}

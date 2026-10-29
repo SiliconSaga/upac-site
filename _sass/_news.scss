@@ -1,0 +1,46 @@
+// ---------- News: cards, the post page, the follow box ----------
+
+// Cards (home "What's happening" and the News page)
+.post-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: $bp-lg) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .post-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; } }
+.post-grid li { margin: 0; }
+.post-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  box-shadow: $shadow-soft;
+  color: $ink;
+  text-decoration: none;
+  transition: transform 0.08s ease, border-color 0.15s ease;
+  &:hover { transform: translateY(-2px); border-color: $pink; text-decoration: none; }
+  img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .post-card-text { display: block; padding: 0.6rem 0.75rem 0.75rem; font-size: 0.88rem; line-height: 1.4; }
+  small { display: block; color: $ink-muted; font-size: 0.78rem; margin-bottom: 0.15rem; }
+  strong { font-weight: 700; }
+}
+
+// Post page
+.post { display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 2rem; align-items: start; margin-bottom: 2rem; }
+@media (max-width: $bp-md) { .post { grid-template-columns: 1fr; } }
+.post-image { margin: 0; img { width: 100%; height: auto; border-radius: $radius; box-shadow: $shadow; background: $white; } }
+.post-text p:first-child { font-size: 1.05rem; }
+.post-back { margin-top: 1.5rem; }
+
+// Follow box
+.follow {
+  margin-top: 2.5rem;
+  padding: 1.4rem 1.5rem;
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow-soft;
+  h2 { margin: 0 0 0.3rem; font-size: 1.25rem; border: 0; padding: 0; }
+  p { margin-bottom: 0.9rem; }
+}
+.follow-row { display: flex; flex-wrap: wrap; gap: 0.6rem; .btn { display: inline-flex; align-items: center; gap: 0.4rem; } }
+.follow-note { font-size: 0.88rem; margin: 0.9rem 0 0; }

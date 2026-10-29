@@ -32,13 +32,15 @@
           <li><a href="mailto:{{ studio.email }}">{{ studio.email }}</a></li>
           <li><a href="{{ '/contact/' | relative_url }}">Contact &amp; directions</a></li>
           <li><a href="{{ '/calendar/' | relative_url }}">Studio calendar</a></li>
+          <li><a href="{{ '/news/' | relative_url }}">Studio news</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-legal">
       <p>&copy; {{ 'now' | date: '%Y' }} {{ studio.name }} &middot; West Orange, NJ &middot; Established {{ studio.established }}</p>
       <p class="footer-meta">
-        {% if site.github_edit_base and page.path %}<a class="edit-link" href="{{ site.github_edit_base }}{{ page.edit_path | default: page.path }}" target="_blank" rel="noopener" title="Opens the file behind this page on GitHub — your change comes back as a pull request for the studio to review">{% include icon.html name="pencil" %} Suggest an edit</a>{% endif %}
+        {%- comment -%} Pages set edit_path (a file under the repo) or edit_url (a full URL, e.g. GitHub's new-file page) and optionally edit_label. {%- endcomment -%}
+        {% if page.edit_url %}<a class="edit-link" href="{{ page.edit_url }}" target="_blank" rel="noopener" title="Opens GitHub — your change comes back as a pull request for the studio to review">{% include icon.html name="pencil" %} {{ page.edit_label | default: "Suggest an edit" }}</a>{% elsif site.github_edit_base and page.path %}<a class="edit-link" href="{{ site.github_edit_base }}{{ page.edit_path | default: page.path }}" target="_blank" rel="noopener" title="Opens the file behind this page on GitHub — your change comes back as a pull request for the studio to review">{% include icon.html name="pencil" %} {{ page.edit_label | default: "Suggest an edit" }}</a>{% endif %}
         <span>Site maintained with <a href="https://siliconsaga.github.io/yggdrasil/gdd/" target="_blank" rel="noopener">GDD</a></span>
       </p>
     </div>
