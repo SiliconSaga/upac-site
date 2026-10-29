@@ -1,65 +1,8 @@
-# Photos and social-post graphics. Files live in assets/img/gallery/ and
-# assets/img/troupe/. To add one: drop the image in the folder, add an entry
-# at the TOP of the list (newest first), write a one-line caption.
+# Photo strip on the Troupe page. Files live in assets/img/troupe/. To add one:
+# drop the image in the folder, add an entry, write a one-line caption.
 #
-# `home` feeds the "What's happening" grid on the home page (first 8 show)
-# and nothing else; `troupe` is the photo strip on the Troupe page.
-
-home:
-  - file: show-2026-playbill.jpg
-    caption: "Show 2026 playbill: Saturday, June 13 at James Caldwell High School"
-    alt: "Show 2026 playbill with four acts: Wild Wild West, The Nutcracker, The MJ Experience and Encanto"
-  - file: pink-ribbon-wall.jpg
-    caption: Pink ribbons on the studio wall for Breast Cancer Awareness Month
-    alt: Studio wall covered in handwritten pink ribbons around the UPAC logo
-  - file: wear-it-pink.jpg
-    caption: Wear It Pink Week
-    alt: Six dancers in pink posing in front of a chalkboard that reads Wear It Pink
-  - file: seniors-2026.jpg
-    caption: Our 2026 UPAC seniors, college shirts on
-    alt: Five graduating seniors in their college shirts in front of the UPAC wall
-  - file: dance-your-heart-out.jpg
-    caption: "Show 2026: \"Darling, don't ever be too shy to dance your heart out\""
-    alt: Dancers in colorful costumes with arms raised on stage during the 2026 show
-  - file: spirit-week-2026.jpg
-    caption: Spirit Week recap 2026 — UPAC pride!
-    alt: Collage of dancers in blue and white UPAC gear during Spirit Week
-  - file: st-patricks-parade-2026.jpg
-    caption: West Orange St. Patrick's Day Parade 2026
-    alt: UPAC dancers in black jackets and green accessories lined up behind the studio banner before the parade
-  - file: mlk-celebration-2026.jpg
-    caption: Performing at West Orange's 14th annual Dr. Martin Luther King Jr. celebration, January 19, 2026
-    alt: Event flyer for the West Orange MLK celebration with photos of UPAC dancers on stage
-  - file: wear-red-week-2026.jpg
-    caption: Wear Red Week 2026
-    alt: Wear Red Week social post
-  - file: holiday-town-hall.jpg
-    caption: Holiday sweaters at West Orange Town Hall
-    alt: A large group of dancers in holiday sweaters posing in the West Orange council chamber
-  - file: welcome-to-dance-class.jpg
-    caption: First-day smiles — welcome to our dance class!
-    alt: Five young dancers in leotards sitting on chairs in front of a chalkboard that says Welcome to our dance class
-  - file: first-week-of-classes.jpg
-    caption: Happy first week of classes!
-    alt: Welcome banner with blue and silver star balloons and a chalkboard reading Happy 1st Week of Classes
-  - file: bring-a-buddy-week-2025.jpg
-    caption: Bring a Buddy Week 2025
-    alt: Bring a Buddy Week social post
-  - file: dress-up-week-2025.jpg
-    caption: Dress Up Week 2025
-    alt: Dress Up Week social post
-  - file: breast-cancer-fundraiser.jpg
-    caption: Breast Cancer Awareness fundraiser
-    alt: Breast Cancer Awareness fundraiser social post
-  - file: troupe-nationals-2025.jpg
-    caption: UPAC Troupe — countdown to Nationals 2025
-    alt: Collage of UPAC Troupe dancers performing on stage in sequined costumes
-  - file: seniors-2025.jpg
-    caption: Senior spotlight — congratulations, class of 2025!
-    alt: Four graduating seniors smiling in front of the UPAC wall
-  - file: show-2025-playbill.jpg
-    caption: "Show 2025 playbill: Saturday, June 7, 2025 at James Caldwell High School"
-    alt: "Show 2025 playbill with four acts: Candy Land, Willy Wonka, Emotions and I Love New Jersey"
+# News and event pictures are not here any more: each is a post in _posts/
+# with its image under assets/news/<slug>/ (see README, "News posts").
 
 troupe:
   - file: troupe-2025-26.jpg

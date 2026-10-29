@@ -1,6 +1,6 @@
 // Classes and Tuition get printed and pinned to fridges. Drop the chrome.
 @media print {
-  .announce, .masthead, .site-header, .site-footer, .page-tools, .hero, .nav-toggle { display: none !important; }
+  .announce, .masthead, .site-header, .site-footer, .page-tools, .hero, .nav-toggle, .follow, .post-back { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .page-band { background: none; color: #000; padding: 0 0 0.5rem; &::after { display: none; } h1 { color: #000; } .lead { color: #333; } }
   .page-body { padding: 0; }

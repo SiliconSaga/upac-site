@@ -3,7 +3,7 @@
 # The thin strip across the very top of every page. Leave `text` empty to
 # hide the strip entirely.
 banner:
-  text: "October is Breast Cancer Awareness Month — help us raise money for AAnglesNJ."
+  text: "October is Breast Cancer Awareness Month — help us raise money for AAngelsNJ."
   url:
 
 # The "Coming up" box on the home page. One entry per line; `date` is shown

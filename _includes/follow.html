@@ -1,0 +1,12 @@
+{%- assign studio = site.data.studio -%}
+<aside class="follow" aria-label="Follow UPAC">
+  <h2>Follow along</h2>
+  <p>Studio news goes out on social media and lives here on the site. Pick whichever you check.</p>
+  <div class="follow-row">
+    {% for s in studio.social %}{% if s.icon == "instagram" or s.icon == "facebook" %}
+    <a class="btn btn-outline-ink" href="{{ s.url }}" target="_blank" rel="noopener">{% include icon.html name=s.icon %} {{ s.name }}</a>
+    {% endif %}{% endfor %}
+    <a class="btn btn-outline-ink" href="{{ '/feed.xml' | relative_url }}">{% include icon.html name="rss" %} Feed</a>
+  </div>
+  <p class="muted follow-note">The feed works in any news-reader app (Feedly, NetNewsWire, Inoreader) and needs no account with us. A <a href="{{ '/news/feed.json' | relative_url }}">JSON Feed</a> of the same posts is there too.</p>
+</aside>

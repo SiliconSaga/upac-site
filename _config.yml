@@ -19,6 +19,14 @@ github_edit_base: "https://github.com/SiliconSaga/upac-site/edit/main/"
 permalink: pretty
 markdown: kramdown
 
+# News posts live in _posts/ (one Markdown file per post, images under
+# assets/news/<slug>/) and render at /news/<year>/<slug>/. jekyll-feed builds
+# /feed.xml from them; news/feed.json is the JSON Feed.
+plugins:
+  - jekyll-feed
+feed:
+  posts_limit: 20
+
 sass:
   sass_dir: _sass
   style: compressed
@@ -40,6 +48,12 @@ defaults:
       type: staff
     values:
       layout: staff
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /news/:year/:slug/
 
 exclude:
   - Gemfile

@@ -26,6 +26,7 @@ Only repeat specifics someone gave you or that you read in this repository. Know
 | Gallery captions | `_data/gallery.yml` | home "What's happening", Troupe photo grid |
 | Staff bios | `_staff/*.md` (collection, `order:` sorts) | `staff.html`, `_layouts/staff.html` |
 | Menu | `_data/nav.yml` | header |
+| News posts | `_posts/YYYY-MM-DD-slug.md`, images in `assets/news/<slug>/` | News page, home "What's happening", `/feed.xml`, `/news/feed.json` |
 
 A phrase that looks like page copy is often read from one of these. **Search the whole project before changing anything**, for the exact text and the words around it, then change every place or say which you are leaving and why. The home page restates About and Troupe in shorter form; a change to the long version usually wants a matching change to the summary.
 

@@ -1,0 +1,49 @@
+---
+layout: default
+---
+{%- comment -%}
+One news post. Front matter:
+  title, description    headline and one-line summary (lists, feeds, link previews)
+  image, image_alt      the picture that was posted; alt text describes it
+  downloads             optional list of {label, file} for other sizes
+  date_approximate      true when only the month is known; the date then shows
+                        as "October 2026"
+  source                optional link to the original Instagram or Facebook post
+The body is the post text written for the web: links as links, no hashtags.
+{%- endcomment -%}
+<section class="page-band page-band--tight">
+  <div class="container">
+    <p class="eyebrow"><a href="{{ '/news/' | relative_url }}">Studio news</a> &middot; {% include post-date.html post=page %}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  </div>
+</section>
+
+<article class="page-body">
+  <div class="container">
+    <div class="post">
+      {% if page.image %}
+      <figure class="post-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" width="1080">
+      </figure>
+      {% endif %}
+      <div class="post-text prose">
+        {{ content }}
+        {% if page.source %}<p class="muted"><a href="{{ page.source }}" target="_blank" rel="noopener">See the original post &rarr;</a></p>{% endif %}
+      </div>
+    </div>
+
+    {% if page.downloads %}
+    <h2>Images from this post</h2>
+    <p>Free to share or repost for the studio.</p>
+    <ul>
+      {% for d in page.downloads %}
+      <li><a href="{{ d.file | relative_url }}" download>{{ d.label }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% include follow.html %}
+    <p class="post-back"><a href="{{ '/news/' | relative_url }}">&larr; All studio news</a></p>
+  </div>
+</article>

@@ -15,7 +15,8 @@ This is the website for **UPAC** in West Orange, NJ. It is a plain, file-based s
 | The season name, "Still time to register", the Akada registration links | `_data/season.yml` |
 | The pink strip across the top, and the "Coming up" box on the home page | `_data/announcements.yml` |
 | Address, phone, email, office hours, social links, calendar, Music Together, parties | `_data/studio.yml` |
-| Photos and social posts in "What's happening" and on the Troupe page | `_data/gallery.yml` plus the image in `assets/img/gallery/` or `assets/img/troupe/` |
+| **News posts** (the "What's happening" grid, the News page, the feeds) | one file per post in `_posts/`, image in `assets/news/<post>/`; see [News posts](#news-posts) |
+| Troupe photos | `_data/gallery.yml` plus the image in `assets/img/troupe/` |
 | A staff bio or photo | one file per person in `_staff/`, photo in `assets/img/staff/` |
 | The words on About, Troupe, Contact, Calendar | `about.html`, `troupe.html`, `contact.html`, `calendar.html` |
 | The menu | `_data/nav.yml` |
@@ -53,6 +54,22 @@ The home page shows the newest eight.
 
 In `_data/announcements.yml`, change `banner: text:`. Leave it blank to hide the strip. The "Coming up" list below it works the same way: one line per event, delete the ones that have passed.
 
+## News posts
+
+When something goes out on Instagram or Facebook, keep it here too: *"Save today's post to the site news."* The site is the permanent copy; social is where people see it first. Each post is one file in `_posts/` named `YYYY-MM-DD-short-title.md`, with the post text as the body (links written as links, no hashtags) and this at the top:
+
+| Field | Holds |
+|---|---|
+| `title`, `description` | Headline and one-line summary, shown on cards, in feeds and in link previews |
+| `image`, `image_alt` | The picture that was posted, and a sentence describing it |
+| `downloads` | Optional other sizes, as a list of `label` and `file` |
+| `source` | Optional link to the original Instagram or Facebook post |
+| `date_approximate: true` | Only on old posts whose exact day is unknown; the page then shows just the month |
+
+Put the image in `assets/news/<post file name without the date>/`. Posts appear on the News page and in the home-page grid (newest eight), and publish two feeds: `/feed.xml` for news-reader apps and `/news/feed.json`. The Follow box on the News page links all of these.
+
+The 18 posts that came over from the old site's slider were social posts that had lost their words. Their dates are the month of the event unless the image carried a date, and each file says `date_approximate: true` where that is the case. Fix any you know better, and add the original post links if you have them.
+
 ## How changes go live
 
 1. A change is made on a branch and opened as a **pull request**, by your agent or by you via the "Suggest an edit" link in the footer of any page.
@@ -65,7 +82,8 @@ Nothing reaches the live site without that merge, so there is no way to break th
 
 - The old site showed `uniqueperformanceartscenter@gmail.com` but its email links pointed at `uniqueperformancearts@gmail.com`. This site uses the first one everywhere (it is the Zelle address and the one on the social posts). If that is wrong, change `email:` in `_data/studio.yml`.
 - The X (Twitter) link `@uniquepac` was kept; remove it from `_data/studio.yml` if the account is no longer used.
-- The October fundraiser notice names "AAnglesNJ" as on the old site; correct the spelling in `_data/announcements.yml` if needed.
+- The old site's October notice said "AAnglesNJ". The studio's own fundraiser graphic says AAngels NJ and links aangelsnj.org, so the strip now reads "AAngelsNJ"; change `_data/announcements.yml` if that is wrong.
+- Dates on the 18 older news posts are approximate (see [News posts](#news-posts)).
 
 ## Moving to uniquepac.com
 

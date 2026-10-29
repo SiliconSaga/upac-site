@@ -90,24 +90,17 @@ title: Home
   </div>
 </section>
 
-{% assign posts = site.data.gallery.home %}
-{% if posts and posts.size > 0 %}
+{% if site.posts.size > 0 %}
 <section class="block cream">
   <div class="container">
     <div class="section-head center">
       <div class="rule"></div>
       <p class="eyebrow">What's happening</p>
       <h2>Life at UPAC</h2>
-      <p class="lead">Spirit weeks, parades, fundraisers and show season. Follow along on <a href="https://www.instagram.com/uniqueperformanceartscenter/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/upacwestorange" target="_blank" rel="noopener">Facebook</a>.</p>
+      <p class="lead">Spirit weeks, parades, fundraisers and show season. Follow along on <a href="https://www.instagram.com/uniqueperformanceartscenter/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/upacwestorange" target="_blank" rel="noopener">Facebook</a>, or read it all on the <a href="{{ '/news/' | relative_url }}">news page</a>.</p>
     </div>
-    <div class="gallery">
-      {% for p in posts limit: 8 %}
-      <figure{% if p.tall %} class="tall"{% endif %}>
-        <img src="{{ '/assets/img/gallery/' | append: p.file | relative_url }}" alt="{{ p.alt | default: p.caption }}" loading="lazy">
-        <figcaption>{{ p.caption }}</figcaption>
-      </figure>
-      {% endfor %}
-    </div>
+    {% include post-grid.html limit=8 %}
+    <p class="center" style="margin-top:1.5rem"><a class="btn btn-outline-ink" href="{{ '/news/' | relative_url }}">All studio news</a></p>
   </div>
 </section>
 {% endif %}
